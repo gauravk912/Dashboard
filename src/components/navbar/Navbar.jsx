@@ -22,7 +22,7 @@ const Navbar = () => {
             English
           </div>
           <div className='item'>
-            <DarkModeOutlinedIcon className="icon" />
+            <DarkModeOutlinedIcon className="icon"/>
           </div>
           <div className='item'>
             <ListOutlinedIcon className="icon" />
