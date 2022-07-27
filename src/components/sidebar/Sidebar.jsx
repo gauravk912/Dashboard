@@ -1,89 +1,103 @@
-import React from 'react'
-import './sidebar.scss';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
-import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import "./sidebar.scss";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import StoreIcon from "@mui/icons-material/Store";
+import InsertChartIcon from "@mui/icons-material/InsertChart";
+import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
+import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { Link } from "react-router-dom";
+// import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Sidebar = () => {
+  // const { dispatch } = useContext(DarkModeContext);
   return (
-    <div className='sidebar'>
-      <div className='top'>
-        <span className='logo'>PercyAdmin</span>
+    <div className="sidebar">
+      <div className="top">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">PercyAdmin</span>
+        </Link>
       </div>
       <hr />
-      <div className='center'>
+      <div className="center">
         <ul>
-            <p className='title'>MAIN</p>
+          <p className="title">MAIN</p>
           <li>
-            <DashboardIcon className='icon'/>
+            <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
-          <p className='title'>LISTS</p>
+          <p className="title">LISTS</p>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Users</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
           <li>
-            <PersonOutlineOutlinedIcon className='icon'/>
-            <span>Users</span>
+            <CreditCardIcon className="icon" />
+            <span>Orders</span>
           </li>
           <li>
-            <StoreOutlinedIcon className='icon'/>
-            <span>Products</span>
-          </li>
-          <li>
-            <CreditCardOutlinedIcon className='icon'/>
-            <span>orders</span>
-          </li>
-          <li>
-            <LocalShippingIcon className='icon'/>
+            <LocalShippingIcon className="icon" />
             <span>Delivery</span>
           </li>
-          <p className='title'>USEFUL</p>
+          <p className="title">USEFUL</p>
           <li>
-            <BarChartIcon className='icon'/>
+            <InsertChartIcon className="icon" />
             <span>Stats</span>
           </li>
           <li>
-            <NotificationsNoneOutlinedIcon className='icon'/>
-            <span>Notification</span>
+            <NotificationsNoneIcon className="icon" />
+            <span>Notifications</span>
           </li>
-          <p className='title'>SERVICE</p>
+          <p className="title">SERVICE</p>
           <li>
-            <SettingsSystemDaydreamOutlinedIcon className='icon'/>
+            <SettingsSystemDaydreamOutlinedIcon className="icon" />
             <span>System Health</span>
           </li>
           <li>
-            <PsychologyOutlinedIcon className='icon'/>
+            <PsychologyOutlinedIcon className="icon" />
             <span>Logs</span>
           </li>
           <li>
-            <SettingsIcon className='icon'/>
+            <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
-          <p className='title'>USER</p>
+          <p className="title">USER</p>
           <li>
-            <AccountCircleOutlinedIcon className='icon'/>
+            <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
           <li>
-            <LogoutOutlinedIcon className='icon'/>
+            <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
         </ul>
       </div>
-      <div className='bottom'>
-        <div className='colorOption'></div>
-        <div className='colorOption'></div>
-        <div className='colorOption'></div>
+      <div className="bottom">
+        <div
+          className="colorOption"
+          // onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="colorOption"
+          // onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
